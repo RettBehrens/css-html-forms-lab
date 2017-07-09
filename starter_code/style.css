@@ -3,6 +3,17 @@
 	box-sizing: border-box; 
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
+	font-family: 'Proza Libre', sans-serif;
+	font-size: 14px; 
+	font-weight: 400;
+	border-radius: 5px;
+}
+
+h1 {
+	font-size: 28px;
+	font-weight: 700;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 /* 
@@ -12,6 +23,26 @@
 */
 
 /*-------- Main Styles --------*/
+
+#main {
+	width: 100%;
+}
+
+.container {
+	/*border-radius: 5px;*/
+}
+
+.formSection {
+	display: inline-block;
+	float: left;
+	/*border-radius: 5px;*/
+}
+
+.results {
+	display: inline-block;
+	float: left;
+	/*border-radius: 5px;*/
+}
 
 /* 
 	Make the main container the full width of the page.
@@ -23,7 +54,72 @@
 
 /*-------- Form Styles --------*/
 
+.form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #E3E6EC;
+	padding: 20px 15px 20px 15px;
+	margin: 10px;
+}
 
+.row {
+	padding-top: 20px;
+
+}
+
+.formGroup {
+	width: 100%;
+	display: inline-block;
+}
+
+.formGroup label {
+	width: 100%;
+	display: block;
+	padding-bottom: 10px;
+}
+
+input, button, textarea, select {
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	width: 100%;
+	min-height: 48px;
+	padding: 14px;
+}
+
+#verb-1 {
+	height: 48px;
+}
+
+textarea {
+	min-height: 100px;
+}
+
+.check, .radio {
+	margin-left: 12px;
+	padding-bottom: 10px;
+}
+
+.check label, .radio label {
+	display: inline;
+	vertical-align: center;
+	padding-left: 5px;
+}
+
+#radio1, #radio2, #radio3, #check1, #check2, #check3 {
+	width: initial;
+}
+
+#submit {
+	float: right;
+	font-weight: 700;
+	width: initial;
+	background-color: rgba(39,208,127,.5);
+	border: none;
+}
+
+#submit:hover {
+	background-color: rgba(39,208,127,1);
+}
 /* 
 
 	Make sure the form itself fills the width of whatever container its in, but no larger than 500px.
@@ -58,6 +154,17 @@
 
 /*-------- Results Styles --------*/
 
+.results {
+	width: 100%;
+	max-width: 500px;
+	background-color: #C8DBB3;
+	padding: 20px 15px 20px 15px;
+	margin: 10px;
+}
+
+.results p {
+	margin: 0;
+}
 
 /* 
 

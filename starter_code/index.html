@@ -2,7 +2,11 @@
 <html>
 <head>
 	<title>CSS HTML Forms Lab</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 	<section id="main">
@@ -84,7 +88,7 @@
 				    	<input id="noun-2" name="noun-2">
 					</div>
 					<div class="row formGroup">
-				    	<input type="submit">
+				    	<input id="submit" type="submit">
 				    </div>
 				    
 			    </div>
@@ -97,6 +101,7 @@
 	<script type="text/javascript">
 
 		var main = $('#main');
+
 		function makeResults() {
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
@@ -106,13 +111,40 @@
 			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
 			// results.className = 'container results';
 			// main.appendChild(results);
+
+			var $selected = [];
+			$("input[type='checkbox']:checked").each(function() {
+				$selected.push($(this).attr('value'));
+			});
+
+			var $name = $('#name').val();
+			var $verb = $('#verb-1').val();
+			var $mission = $('#mission').val();
+			var $sentiment = $("input[name = 'sentiment']:checked").val();
+			var $adjective = $selected.join(", ");
+			var $noun = $('#noun-1').val();
+			var $noun2 = $('#noun-2').val();
+
+			/*var $selected = [];
+			$("input[type='checkbox']:checked").each(function() {
+				$selected.push($(this).attr('value'));
+			});*/
+
+			$('.results').append("<p>Once upon a time there was a Developer named " + $name + ".</p>");
+			$('.results').append("<p>" + $name + " came to General Assembly to " + $verb + " the great mountain of programming knowledge.</p>");
+			$('.results').append("<p>'" + $mission + "', " + $name + " shouted.</p>");
+			$('.results').append("<p>Though " + $sentiment + ", " + $name + " was able to overcome all obstacles with the power of their " + $noun + ".</p>");
+			$('.results').append("<p>In the end, their success can be contributed entirely to their " + $adjective + " " + $noun2 + ".</p>");
+
 		};
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
 	    	// Run the 'makeResults' function seen above
+	    	makeResults();
 
 	    	/*
 			
